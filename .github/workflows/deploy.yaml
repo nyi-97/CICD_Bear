@@ -44,23 +44,23 @@ jobs:
                 "fields": [
                   {
                     "type": "mrkdwn",
-                    "text": "*Name:* ${{ env.NAME }}"
+                    "text": "*Name:* ${{ vars.NAME }}"
                   },
                   {
                     "type": "mrkdwn",
-                    "text": "*Email:* ${{ env.EMAIL }}"
+                    "text": "*Email:* ${{ vars.EMAIL }}"
                   },
                   {
                     "type": "mrkdwn",
-                    "text": "*Matriculation:* ${{ env.MATRICULATION_NUMBER }}"
+                    "text": "*Matriculation:* ${{ vars.MATRICULATION_NUMBER }}"
                   },
                   {
                     "type": "mrkdwn",
-                    "text": "*Repository:* ${{ env.REPOSITORY }}"
+                    "text": "*Repository:* ${{ vars.REPOSITORY }}"
                   },
                   {
                     "type": "mrkdwn",
-                    "text": "${{ env.DEPLOYMENT_URL }}"
+                    "text": "${{ vars.DEPLOYMENT_URL }}"
                   }
                 ]
               }
