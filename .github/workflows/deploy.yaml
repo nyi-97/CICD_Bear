@@ -8,6 +8,7 @@ jobs:
   build_golang:
     runs-on: ubuntu-latest
     if: "!startsWith(github.event.head_commit.message, '#NORUN')"
+    # Test NORUN
 
     steps:
       - name: Checkout Code
@@ -89,7 +90,7 @@ jobs:
               ]
             }
         env:
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACKTESTINGCHANNEL }}
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACKSUBMISSIONCHANNEL }}
           SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
     
       - name: list filesystem before build
