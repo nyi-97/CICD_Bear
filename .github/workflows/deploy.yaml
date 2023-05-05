@@ -43,24 +43,24 @@ jobs:
                 "type": "section",
                 "fields": [
                   {
-                    "type": "plain_text",
-                    "text": "Name: $NAME"
+                    "type": "mrkdwn",
+                    "text": "*Name:* ${{ NAME }}"
                   },
                   {
-                    "type": "plain_text",
-                    "text": "Email: $EMAIL"
+                    "type": "mrkdwn",
+                    "text": "*Email:* ${{ EMAIL }}"
                   },
                   {
-                    "type": "plain_text",
-                    "text": "Matriculation: $MATRICULATION_NUMBER"
+                    "type": "mrkdwn",
+                    "text": "*Matriculation:* ${{ MATRICULATION_NUMBER }}"
                   },
                   {
-                    "type": "plain_text",
-                    "text": "Repository: $REPOSITORY"
+                    "type": "mrkdwn",
+                    "text": "*Repository:* ${{ REPOSITORY }}"
                   },
                   {
-                    "type": "plain_text",
-                    "text": "$DEPLOYMENT_URL"
+                    "type": "mrkdwn",
+                    "text": "${{ DEPLOYMENT_URL }}"
                   }
                 ]
               }
