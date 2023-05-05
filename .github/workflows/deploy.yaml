@@ -27,7 +27,7 @@ jobs:
       - name: Deploy on Railway
         run: railway up
         env:
-          railway_token: ${{ secrets.RAILWAYDEPLOYTOEKN }}
+          railway_token: ${{ secrets.RAILWAYTOKEN }}
       
       - name: Test Submission in Slack Channel
         id: slack
