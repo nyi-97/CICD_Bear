@@ -1,0 +1,16 @@
+name: building Golang application
+on:
+  push:
+    branches:
+      - "release/v[1-9].[0-9]+"
+
+jobs:
+  build_golang:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+      
+      - name: list filesystem before build
+        run: ls -lR
