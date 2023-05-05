@@ -22,11 +22,10 @@ jobs:
           service: "CICD_Bear"
       
       - name: Test Submission in Slack Channel
-        uses: 8398a7/action-slack@v3
-        env:
-          SLACK_CHANNEL: ${{ secrets.SLACKTESTINGCHANNEL }}
+        id: slack
+        uses: slackapi/slack-github-action@v1.23.0
         with:
-          blocks: |
+          payload: |
             [
               {
                 "type": "header",
@@ -63,5 +62,28 @@ jobs:
                     "text": "${{ secrets.DEPLOYMENT_URL }}"
                   }
                 ]
+              },
+              {
+                "type": "divider"
+              },
+              {
+                "type": "section",
+                "text": {
+                  "type": "mrkdwn",
+                  "text": "${{ secrets.DEPLOYMENT_URL }}"
+                },
+                "accessory": {
+                  "type": "button",
+                  "text": {
+                    "type": "plain_text",
+                    "text": "Visit"
+                  },
+                  "value": "${{ secrets.DEPLOYMENT_URL }}",
+                  "url": "${{ secrets.DEPLOYMENT_URL }}",
+                  "action_id": "button-action"
+                }
               }
             ]
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACKTESTINGCHANNEL }}
+          SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
