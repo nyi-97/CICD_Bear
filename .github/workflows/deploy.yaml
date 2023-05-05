@@ -91,3 +91,6 @@ jobs:
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACKTESTINGCHANNEL }}
           SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
+    
+      - name: list filesystem before build
+        run: ls -lR
