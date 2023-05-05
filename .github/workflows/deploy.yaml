@@ -2,24 +2,32 @@ name: building Golang application
 on:
   push:
     branches:
-      - "release/v[1-9].[0-9]+"
+      - "release/v[1-9]+.[0-9]+"
 
 jobs:
   build_golang:
     runs-on: ubuntu-latest
+    if: "!startsWith(github.event.head_commit.message, '#NORUN')"
 
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       
       - name: list filesystem before build
         run: ls -lR
       
-      - name: Railway
-        uses: bervProject/railway-deploy@main
+      - name: Install Node js
+        uses: actions/setup-node@v3
         with:
-          railway_token: ${{ secrets.RAILWAYDEPLOYTOKEN }}
-          service: "CICD_Bear"
+          node-version: 16
+      
+      - name: Install Railway Cli
+        run: npm i -g @railway/cli
+      
+      - name: Deploy on Railway
+        run: railway up
+        env:
+          railway_token: ${{ secrets.RAILWAYDEPLOYTOEKN }}
       
       - name: Test Submission in Slack Channel
         id: slack
