@@ -48,7 +48,7 @@ jobs:
                   },
                   {
                     "type": "plain_text",
-                    "text": "Email: #EMAIL"
+                    "text": "Email: $EMAIL"
                   },
                   {
                     "type": "plain_text",
