@@ -20,3 +20,48 @@ jobs:
         with:
           railway_token: ${{ secrets.RAILWAYDEPLOYTOKEN }}
           service: "CICD_Bear"
+      
+      - name: Test
+        uses: 8398a7/action-slack@v3
+        env:
+          SLACK_CHANNEL: ${{ secrets.SLACKTESTINGCHANNEL }}
+        with:
+          blocks: |
+            [
+              {
+                "type": "header",
+                "text": {
+                  "type": "plain_text",
+                  "text": "DipSA 56 CI/CD CA Submission",
+                  "emoji": true
+                }
+              },
+              {
+                "type": "divider"
+              },
+              {
+                "type": "section",
+                "fields": [
+                  {
+                    "type": "plain_text",
+                    "text": "Name: $NAME"
+                  },
+                  {
+                    "type": "plain_text",
+                    "text": "Email: #EMAIL"
+                  },
+                  {
+                    "type": "plain_text",
+                    "text": "Matriculation: $MATRICULATION_NUMBER"
+                  },
+                  {
+                    "type": "plain_text",
+                    "text": "Repository: $REPOSITORY"
+                  },
+                  {
+                    "type": "plain_text",
+                    "text": "$DEPLOYMENT_URL"
+                  }
+                ]
+              }
+            ]
