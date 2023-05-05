@@ -67,7 +67,7 @@ jobs:
                   "type": "section",
                   "text": {
                     "type": "mrkdwn",
-                    "text": "${{ secrets.GIT_REPOSITORY }}"
+                    "text": "${{ secrets.DEPLOYMENT_URL }}"
                   },
                   "accessory": {
                     "type": "button",
@@ -76,7 +76,7 @@ jobs:
                       "text": "Visit Website",
                       "emoji": true
                     },
-                    "url": "https://${{ secrets.GIT_REPOSITORY }}"
+                    "url": "https://${{ secrets.DEPLOYMENT_URL }}"
                   }
                 }
               ]
