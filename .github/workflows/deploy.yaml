@@ -18,5 +18,5 @@ jobs:
       - name: Railway
         uses: bervProject/railway-deploy@main
         with:
-          railway_token: ${{ secrets.RAILWAYTOKEN }}
+          railway_token: ${{ secrets.RAILWAYDEPLOYTOKEN }}
           service: "CICD_Bear"
