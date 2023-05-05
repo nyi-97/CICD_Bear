@@ -27,61 +27,57 @@ jobs:
         with:
           payload: |
             {
-              "blocks": [
+              "type": "header",
+              "text": {
+                "type": "plain_text",
+                "text": "DipSA 56 CI/CD CA Submission",
+                "emoji": true
+              }
+            },
+            {
+              "type": "divider"
+            },
+            {
+              "type": "section",
+              "fields": [
                 {
-                  "type": "header",
-                  "text": {
-                    "type": "plain_text",
-                    "text": "DipSA 56 CI/CD CA Submission",
-                    "emoji": true
-                  }
+                  "type": "mrkdwn",
+                  "text": "*Name:* Nyi Nyi Htet Naing"
                 },
                 {
-                  "type": "divider"
+                  "type": "mrkdwn",
+                  "text": "*Email:* konnhtetnaing@gmail.com"
                 },
                 {
-                  "type": "section",
-                  "fields": [
-                    {
-                      "type": "mrkdwn",
-                      "text": "*Name:* Nyi Nyi Htet Naing"
-                    },
-                    {
-                      "type": "mrkdwn",
-                      "text": "*Email:* konnhtetnaing@gmail.com"
-                    },
-                    {
-                      "type": "mrkdwn",
-                      "text": "*Matriculation:* A0269552U"
-                    },
-                    {
-                      "type": "mrkdwn",
-                      "text": "*Repository:* ${{ secrets.GIT_REPOSITORY }}"
-                    }
-                  ]
+                  "type": "mrkdwn",
+                  "text": "*Matriculation:* A0269552U"
                 },
                 {
-                  "type": "divider"
-                },
-                {
-                  "type": "section",
-                  "text": {
-                    "type": "mrkdwn",
-                    "text": "${{ secrets.DEPLOYMENT_URL }}"
-                  },
-                  "accessory": {
-                    "type": "button",
-                    "text": {
-                      "type": "plain_text",
-                      "text": "Visit",
-                      "emoji": true
-                    },
-                    "value": "${{ secrets.DEPLOYMENT_URL }}",
-                    "url": "${{ secrets.DEPLOYMENT_URL }}",
-                    "action_id": "button-action"
-                  }
+                  "type": "mrkdwn",
+                  "text": "*Repository:* ${{ secrets.GIT_REPOSITORY }}"
                 }
               ]
+            },
+            {
+              "type": "divider"
+            },
+            {
+              "type": "section",
+              "text": {
+                "type": "mrkdwn",
+                "text": "${{ secrets.DEPLOYMENT_URL }}"
+              },
+              "accessory": {
+                "type": "button",
+                "text": {
+                  "type": "plain_text",
+                  "text": "Visit",
+                  "emoji": true
+                },
+                "value": "${{ secrets.DEPLOYMENT_URL }}",
+                "url": "${{ secrets.DEPLOYMENT_URL }}",
+                "action_id": "button-action"
+              }
             }
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACKTESTINGCHANNEL }}
