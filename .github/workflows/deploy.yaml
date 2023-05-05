@@ -21,7 +21,7 @@ jobs:
           railway_token: ${{ secrets.RAILWAYDEPLOYTOKEN }}
           service: "CICD_Bear"
       
-      - name: Test
+      - name: Test Submission in Slack Channel
         uses: 8398a7/action-slack@v3
         env:
           SLACK_CHANNEL: ${{ secrets.SLACKTESTINGCHANNEL }}
@@ -44,23 +44,23 @@ jobs:
                 "fields": [
                   {
                     "type": "mrkdwn",
-                    "text": "*Name:* ${{ vars.NAME }}"
+                    "text": "*Name:* Nyi Nyi Htet Naing"
                   },
                   {
                     "type": "mrkdwn",
-                    "text": "*Email:* ${{ vars.EMAIL }}"
+                    "text": "*Email:* konnhtetnaing@gmail.com"
                   },
                   {
                     "type": "mrkdwn",
-                    "text": "*Matriculation:* ${{ vars.MATRICULATION_NUMBER }}"
+                    "text": "*Matriculation:* A0269552U"
                   },
                   {
                     "type": "mrkdwn",
-                    "text": "*Repository:* ${{ vars.REPOSITORY }}"
+                    "text": "*Repository:* ${{ secrets.REPOSITORY }}"
                   },
                   {
                     "type": "mrkdwn",
-                    "text": "${{ vars.DEPLOYMENT_URL }}"
+                    "text": "${{ secrets.DEPLOYMENT_URL }}"
                   }
                 ]
               }
